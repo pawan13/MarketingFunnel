@@ -24,7 +24,7 @@ const createLeadInfo = async (req, res, next) => {
 const viewLeadInfo = async (req, res, next) => {
   try {
     // Logic to view lead information
-    const leads = await viewLead();
+    const leads = await viewLead({}); // Fetch all leads
     if (leads.length > 0) {
       return res.json({
         status: "SUCCESS",

@@ -1,8 +1,10 @@
 const express = require("express");
 const leadInfoRouter = express.Router();
 
-const createLeadInfo = require("../controllers/leadController");
-const viewLeadInfo = require("../controllers/leadController");
+const {
+  createLeadInfo,
+  viewLeadInfo,
+} = require("../controllers/leadController");
 
 leadInfoRouter.post("/", createLeadInfo);
 
