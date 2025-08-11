@@ -8,4 +8,5 @@ const Lead = mongoose.model("Lead", leadSchema);
 
 const createLead = (leadInfo) => Lead.create(leadInfo);
 
-module.exports = { createLead };
+const viewLead = () => Lead.find({});
+module.exports = { createLead, viewLead };

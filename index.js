@@ -17,7 +17,6 @@ const leadInfoRouter = require("./src/routers/leadRouter");
 
 // Database connection
 const dbConnect = require("./src/config/MongoDB");
-const { Lead } = require("./src/models/leadModel");
 
 //Check Health
 app.get("/", (req, res) => {
