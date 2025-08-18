@@ -1,11 +1,17 @@
 const { createLead, viewLead } = require("../models/leadModel");
+const {sendEbookDownloadEmail} = require("../services/nodemailer.js")
 
 const createLeadInfo = async (req, res, next) => {
   try {
     // Logic to create lead information
     const data = req.body; // Assuming lead data is sent in the request body
+
+    const {email, fullName} = data
+  
     const Lead = await createLead(data);
+    console.log("Lead created:", Lead);
     if (Lead) {
+      sendEbookDownloadEmail({email, fullName})
       return res.json({
         status: "SUCCESS",
         message: "New Lead is created!",
