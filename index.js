@@ -23,7 +23,7 @@ const UserRouter = require("./src/routers/userRouter");
 
 // Serve ebook manually
 app.get("/e-book", (req, res) => {
-  res.sendFile(path.join(__dirname, "e-book.pdf")); // adjust path if inside /public
+  res.sendFile(path.join(__dirname,"files", "e-book.pdf")); // adjust path if inside /public
 });
 
 // Database connection
