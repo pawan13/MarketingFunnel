@@ -26,7 +26,7 @@ const sendEbookDownloadEmail = async ({email, fullName }) => {
     html: `
     <p>Hi ${fullName},</p>
     <p>Thanks for signing up. You can download your free e-book below:</p>
-    <p><a href="https://marketing-funnel-lemon.vercel.app/ebook.pdf">Download e-book</a></p>
+    <p><a href="https://marketing-funnel-lemon.vercel.app/e-book.pdf">Download e-book</a></p>
     <p>Enjoy!</p>
   `,
   });
