@@ -22,8 +22,14 @@ const leadInfoRouter = require("./src/routers/leadRouter");
 const UserRouter = require("./src/routers/userRouter");
 
 // Serve ebook manually
-app.get("/e-book", (req, res) => {
-  res.sendFile(path.join(__dirname,"files", "e-book.pdf")); // adjust path if inside /public
+app.get("/e-book.pdf", (req, res) => {
+  const filePath = path.join(process.cwd(), "files", "e-book.pdf");
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Error sending file");
+    }
+  });
 });
 
 // Database connection
