@@ -5,9 +5,10 @@ const {
   createLeadInfo,
   viewLeadInfo,
 } = require("../controllers/leadController");
+const { auth } = require("../middleware/auth");
 
 leadInfoRouter.post("/", createLeadInfo);
 
-leadInfoRouter.get("/", viewLeadInfo);
+leadInfoRouter.get("/", auth, viewLeadInfo);
 
 module.exports = leadInfoRouter;

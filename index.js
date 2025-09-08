@@ -11,9 +11,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("combined"));
+app.use(express.static("public"));
 
 // Routes
 const leadInfoRouter = require("./src/routers/leadRouter");
+const UserRouter = require("./src/routers/userRouter");
 
 // Database connection
 const dbConnect = require("./src/config/MongoDB");
@@ -24,6 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/leads", leadInfoRouter);
+app.use('/api/users', UserRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

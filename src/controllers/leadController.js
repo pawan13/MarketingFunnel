@@ -1,5 +1,5 @@
 const { createLead, viewLead } = require("../models/leadModel");
-const {sendEbookDownloadEmail} = require("../services/nodemailer.js")
+const {sendEbookDownloadEmail} = require("../service/nodemailer.js")
 
 const createLeadInfo = async (req, res, next) => {
   try {
